@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kawsika M | Web Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #2c3e50;
+      scroll-behavior: smooth;
+      transition: background-color 0.5s ease, color 0.5s ease;
+    }
+
+    body.dark {
+      background-color: #0d1117;
+      color: #e6edf3;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      text-align: center;
+      padding: 100px 20px 60px;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    }
+
+    header img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 6px solid #fff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      margin-bottom: 20px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+
+    .toggle-mode {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #f1c40f;
+      border: none;
+      color: #2c3e50;
+      padding: 10px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+    }
+
+    .toggle-mode:hover {
+      background: #f39c12;
+    }
+
+    nav {
+      background-color: #1b1f23;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      color: #f4f4f4;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #f1c40f;
+    }
+
+    .resume-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 30px;
+      background: #e67e22;
+      color: white;
+      border-radius: 25px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .resume-btn:hover {
+      background: #d35400;
+      transform: scale(1.05);
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 40px;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    body.dark section {
+      background-color: #161b22;
+    }
+
+    h2 {
+      color: #e67e22;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      border-left: 6px solid #f1c40f;
+      padding-left: 15px;
+    }
+
+    .project {
+      margin-bottom: 30px;
+      padding: 20px;
+      border-left: 5px solid #2c5364;
+      background: #f9f9f9;
+      border-radius: 12px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    body.dark .project {
+      background-color: #0d1117;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .tech-icons {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      font-size: 2rem;
+      margin-top: 30px;
+      color: #2c5364;
+    }
+
+    .tech-icons i:hover {
+      color: #e67e22;
+    }
+
+    footer {
+      text-align: center;
+      background: #1b1f23;
+      color: white;
+      padding: 25px;
+      font-size: 14px;
+    }
+
+    a {
+      color: #2c5364;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #e67e22;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle-mode" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+  <header data-aos="zoom-in">
+    <img src="kawsika.jpg" alt="KAWSIKA M Photo" />
+    <h1>KAWSIKA M</h1>
+    <p>Electrical & Electronics Engineering Student | Aspiring Web Developer | SQL Developer | Presenter</p>
+    <a class="resume-btn" href="https://1drv.ms/b/c/2f2301c70dc56c1d/EVxfDP-JRzVGliz0mybi0pUBI4T2cJQZfepE3MtTBUIqQQ?e=wJbdep" target="_blank">View Resume</a>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about" data-aos="fade-right">
+    <h2>About Me</h2>
+    <p>I am an Electrical and Electronics Engineering student with a strong foundation in C programming and MySQL. My passion for technology and problem-solving has led me into web development, where I enjoy creating clean, responsive websites and working with data-driven applications.</p>
+    <p>I’m currently seeking opportunities where I can grow as a developer, contribute to meaningful projects, and expand my skills in both frontend and backend development.</p>
+    <div class="tech-icons" data-aos="zoom-in">
+      <i class="fab fa-html5" title="HTML5"></i>
+      <i class="fab fa-css3-alt" title="CSS3"></i>
+      <i class="fab fa-js" title="JavaScript"></i>
+      <i class="fab fa-python" title="Python"></i>
+      <i class="fas fa-database" title="MySQL"></i>
+    </div>
+  </section>
+
+  <section id="projects" data-aos="fade-up">
+    <h2>Projects</h2>
+    <div class="project" data-aos="zoom-in-up">
+      <h3>Gas Leakage Detector Using Raspberry Pi</h3>
+      <p>Developed a gas leakage detection system using Raspberry Pi. It automatically shuts down the power, triggers alarms, and sends notifications. The detection logic was built using Python. This project emphasizes safety, automation, and embedded programming skills.</p>
+      <p><a href="https://github.com/kawsika114/gas" target="_blank">View on GitHub</a></p>
+    </div>
+    <div class="project" data-aos="zoom-in-up" data-aos-delay="100">
+      <h3>Web App Using Python Flask</h3>
+      <p>Created a dynamic web application using Python Flask, implementing routes, templates, and database integration. This demonstrated skills in backend development, Flask architecture, and full-stack design.</p>
+      <p><a href="https://github.com/kawsika114/flask" target="_blank">View on GitHub</a></p>
+    </div>
+  </section>
+
+  <section id="certifications" data-aos="fade-left">
+    <h2>Certifications</h2>
+    <ul>
+      <li data-aos="fade-up">HDCA course completion certificate at CSE Institute (tools: MS Word, Excel, C, C++, Python, MySQL, DBMS)</li>
+      <li data-aos="fade-up" data-aos-delay="100">Completed AutoCAD certification at Vector Solution</li>
+      <li data-aos="fade-up" data-aos-delay="200">Workshop on "Testing of Electronic Devices in Hardware"</li>
+      <li data-aos="fade-up" data-aos-delay="300">Completed MySQL course on Udemy</li>
+    </ul>
+  </section>
+
+  <section id="achievements" data-aos="fade-right">
+    <h2>Achievements</h2>
+    <ul>
+      <li data-aos="flip-left">1st prize in TECHNOLOGY'23 - IIT Madras Research Park</li>
+      <li data-aos="flip-left" data-aos-delay="100">1st prize in poster presentation - Institution's Innovation Day</li>
+      <li data-aos="flip-left" data-aos-delay="200">3rd prize - World Safety Day poster presentation</li>
+      <li data-aos="flip-left" data-aos-delay="300">Best Paper Award - International Conclave on Sustainnovation ICS 1.0</li>
+      <li data-aos="flip-left" data-aos-delay="400">1st prize - District level speech competition by DMK Youth Wing</li>
+    </ul>
+  </section>
+
+  <section id="skills" data-aos="fade-up">
+    <h2>Skills</h2>
+    <div class="project" data-aos="zoom-in">
+      <h3>Technical Skills</h3>
+      <ul>
+        <li>C Programming</li>
+        <li>MySQL</li>
+        <li>AutoCAD</li>
+        <li>Python & Flask</li>
+      </ul>
+    </div>
+    <div class="project" data-aos="zoom-in" data-aos-delay="100">
+      <h3>Soft Skills</h3>
+      <ul>
+        <li>Compering</li>
+        <li>Team collaboration</li>
+        <li>Problem-solving</li>
+        <li>Adaptability</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" data-aos="fade-left">
+    <h2>Contact</h2>
+    <p>📧 Email: <a href="mailto:kawsika236@gmail.com">kawsika236@gmail.com</a></p>
+    <p>📱 Phone: <a href="tel:+918838957836">8838957836</a></p>
+    <p>💻 GitHub: <a href="https://github.com/kawsika114" target="_blank">github.com/kawsika114</a></p>
+    <p>🔗 LinkedIn: <a href="https://linkedin.com/in/kawsika-madhavaraj-48343b318" target="_blank">linkedin.com/in/kawsika-madhavaraj</a></p>
+  </section>
+
+  <footer data-aos="fade-up">
+    © 2025 Kawsika M. All rights reserved.
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease-in-out'
+    });
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
+</body>
+</html>
